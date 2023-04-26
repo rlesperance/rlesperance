@@ -1,9 +1,9 @@
 ## Notebook Code
 
-Using ArcGIS Pro, use the Add Attribute Rule geoprocessing tool to define this rule on a feature class and optionally on a subtype in that feature class.  Use the following values when defining the rule, the other options are not required or depend on your situation.
-  
-  - **Rule Type:** Calculation
-  - **Triggering Events:** Insert
+This code copies users from one ArcGIS Online org to another one. 
+It takes the user and uses the properties to run the portal.users.create() function to create the user on the target. 
+  Because ArcGIS Online only allows a unique username across all organizations, the new user's name needs to be different.  There is an "org" variable in the setup code that gets appended to the username to be added to the target.  
+
 
 ## Setup Code
 
@@ -145,6 +145,7 @@ for u in source_users:
 ```
 
 ## Output to XLS file
+Take note of the format of the output.  This file will be used to add users to groups in the copy_groups notebook and by the copy_items script to assign ownership to items copied. 
 
 ```python
 #Export User Mapping to XLS sheet
